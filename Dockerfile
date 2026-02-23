@@ -9,11 +9,7 @@ COPY src ./src
 RUN mvn clean package
 
 # -------- Stage 2: Runtime --------
-FROM image-registry.openshift-image-registry.svc:5000/openshift/jboss-webserver57-openjdk11-tomcat9-openshift-ubi8:latest
-
-USER root
-
-RUN microdnf install -y tar gzip && microdnf clean all
+FROM openshift/jboss-webserver57-openjdk11-tomcat9-openshift-ubi8:latest
 
 WORKDIR /deployments
 
