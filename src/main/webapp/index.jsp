@@ -8,6 +8,6 @@
     String pass = System.getenv("DB_PASSWORD");
 %>
 
-<h1><%= message %></h1>
+<h1>VERSION 2 - DEV TEST</h1>
 <h3>DB User: <%= user %></h3>
 <h3>DB Password: <%= pass %></h3>
