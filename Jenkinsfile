@@ -33,6 +33,14 @@ pipeline {
                 '''
             }
         }
+	
+	stage('Tag Image') {
+	    steps {
+                bat '''
+                    oc tag enterprise-clean:latest enterprise-clean:%BUILD_NUMBER%
+                '''
+            }
+        }
 
         stage('Verify Rollout') {
             steps {
